@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход | BizAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Добро пожаловать</h2>
+                <p>Войдите в свой аккаунт для продолжения</p>
+            </div>
+            <div class="auth-body">
+              <div class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Ваш email">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" class="form-control" placeholder="Ваш пароль">
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="btn-auth">Войти</button>
+                </form>
+                </div>
+            </div>
+            <div class="auth-footer">
+                <p>Нет аккаунта? <a href="register.html" class="auth-link">Зарегистрируйтесь</a></p>
+                <p><a href="forgot.html" class="auth-link">Забыли пароль?</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

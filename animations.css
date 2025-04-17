@@ -1,0 +1,226 @@
+/* Process Block Styles */
+.process-block {
+    background: linear-gradient(135deg, #f6f9ff 0%, #f0f7f4 100%);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    margin: 60px auto;
+    max-width: 800px;
+}
+
+.process-block::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%,
+        rgba(59, 130, 246, 0.08) 0%,
+        transparent 40%);
+    animation: pulse 15s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.2); opacity: 0.4; }
+}
+
+.process-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.process-header h2 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.process-header p {
+    color: #4B5563;
+    font-size: 18px;
+}
+
+.process-steps {
+    position: relative;
+    z-index: 1;
+}
+
+.step-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #3B82F6, #10B981);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.step-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.step-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #10B981);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1.5s ease-out;
+}
+
+.process-progress {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-text {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3B82F6, #10B981);
+    transition: width 1s;
+}
+
+/* Анимация для CTA кнопок */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.cta-button {
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    animation: none;
+}
+
+/* Анимация появления преимуществ */
+.benefit-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.benefit-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для иконок преимуществ */
+.benefit-icon .icon {
+    width: 80px;
+    height: 80px;
+}
+
+.benefit-icon .gear {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transform-origin: center;
+    animation: rotate 15s linear infinite;
+}
+
+.benefit-icon .clock-face {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2;
+}
+
+.benefit-icon .hour-hand,
+.benefit-icon .minute-hand {
+    fill: none;
+    stroke: var(--secondary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transform-origin: center;
+}
+
+.benefit-icon .hour-hand {
+    animation: rotate 12s linear infinite;
+}
+
+.benefit-icon .minute-hand {
+    animation: rotate 6s linear infinite;
+}
+
+.benefit-icon .brain {
+    fill: var(--primary);
+    opacity: 0.8;
+    transform-origin: center;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.benefit-icon .circuit {
+    fill: none;
+    stroke: var(--secondary);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes dash {
+    to { stroke-dashoffset: 0; }
+}
